@@ -14,7 +14,7 @@ datasets = {name: read_yaml(name) for name in ['characters', 'roles', 'actions',
 
 combinations = [
     ('characters', ': ', 'actions'),
-    ('characters', ': ', 'actions2', ': ', 'roles'),
+    ('characters', ': as ', 'roles'),
     ('characters', ': ', 'actions2', ': ', 'characters'),
 ]
 
