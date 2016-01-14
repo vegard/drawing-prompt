@@ -1,0 +1,23 @@
+@font-face {
+	font-family: LaFayetteComicPro;
+	src: url(Laffayette_Comic_Pro.ttf);
+}
+
+body {
+	font-family: LaFayetteComicPro;
+}
+
+h1 {
+	font-weight: normal;
+}
+
+#idea {
+	padding: 1.5em 0;
+	margin: 1em 0;
+
+	font-size: 2em;
+	text-align: center;
+
+	background: #fbb;
+	border-radius: 4em;
+}
