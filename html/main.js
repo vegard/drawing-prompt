@@ -1,9 +1,8 @@
 generate = function() {
-	var combination_i = Math.floor(Math.random() * nr_combinations);
+	var p_i = Math.floor(Math.random() * probabilities[probabilities.length - 1][0][0]);
 	for (i = 0; i < probabilities.length; ++i) {
 		p = probabilities[i]
-
-		if (combination_i < p[0]) {
+		if (p_i < p[0][0]) {
 			s = p[1].map(function(e) {
 				if (e.startsWith(":")) {
 					return e.substr(1);
@@ -14,7 +13,7 @@ generate = function() {
 				return dataset[j];
 			}).join('');
 
-			$('#idea').text('#' + combination_i + ': ' + s);
+			$('#idea').text(s);
 			break;
 		}
 	}

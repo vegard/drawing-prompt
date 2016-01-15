@@ -13,9 +13,9 @@ def read_yaml(name):
 datasets = {name: read_yaml(name) for name in ['characters', 'roles', 'actions', 'actions2']}
 
 combinations = [
-    ('characters', ': ', 'actions'),
-    ('characters', ': as ', 'roles'),
-    ('characters', ': ', 'actions2', ': ', 'characters'),
+    (20, 'characters', ': ', 'actions'),
+    (40, 'characters', ': as ', 'roles'),
+    (20, 'characters', ': ', 'actions2', ': ', 'characters'),
 ]
 
 def count_combinations(args):
@@ -29,9 +29,11 @@ def count_combinations(args):
 probabilities = []
 
 n = 0
+m = 0
 for args in combinations:
-    n += count_combinations(args)
-    probabilities.append((n, args))
+    n += count_combinations(args[1:])
+    m += args[0]
+    probabilities.append(((m, n), args[1:]))
 
 with open('html/data.js', 'w') as f:
     print >>f, 'datasets = %s;' % (json.dumps(datasets), )
